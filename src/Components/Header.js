@@ -3,7 +3,7 @@ import {Link, useLocation,useHistory} from 'react-router-dom'
 import { GlobalContext, GlobalDispatchContext } from '../ContextStore/ContextAPI'
 import Doctor from '../Assets/Doctor.jpeg'
 import { ManageLocalStorage } from '../Utils/ManageLocalStorage';
-const Header =()=>{
+const Header =({isLogin})=>{
 const {loginState}= React.useContext(GlobalContext)
 const dispatch= React.useContext(GlobalDispatchContext)
 const [show,setShow]=React.useState(false)
@@ -22,7 +22,7 @@ React.useEffect(()=>{
   setShow(false)
 },[location])
 const toLogin=()=>history.push('./dashboard')
-    return     <nav className="navbar navbar-expand-lg navbar-light" id="nav" style={{background: '#FDF5E5'}}>
+    return     <nav className="navbar navbar-expand-lg navbar-light" id="nav" style={{background: 'rgb(131 198 255)'}}>
     <div className="imagecontainer" onClick={toLogin}>
     <Link to="/" className="nav-link">
       <img alt="Vue logo" src={Doctor} width="50px" className="CartLogo"/>
@@ -31,7 +31,9 @@ const toLogin=()=>history.push('./dashboard')
     <Link to="/" className="nav-link">
       <div className='fantasy' onClick={toLogin} style={{ color: '#521F1E'}}>Dr. Chitti, PhD AI</div>
     </Link>
-    <button
+    {!isLogin && <>
+
+      <button
       className="navbar-toggler"
       type="button"
       data-toggle="collapse"
@@ -52,6 +54,9 @@ const toLogin=()=>history.push('./dashboard')
               className={`nav-link ${loginState.isLoggedIn?'text-danger':''}`}>{loginState.isLoggedIn? <><i className="fas fa-sign-out-alt"></i>Logout</>:'Login'}  </Link></li>
       </ul>
     </div>
+
+    </>}
+
   </nav>
 }
 export default Header

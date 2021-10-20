@@ -14,7 +14,7 @@ const MainWrapper = props => {
      <div id="app" className="container width100">
     <main>
 <Toast/><Loader/>
-   {loginState.isLoggedIn && <Header/>}
+   {<Header isLogin={loginState.isLoggedIn? false:true}/>}
 
     {children}
 
