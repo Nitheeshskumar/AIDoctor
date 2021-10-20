@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, useLocation,useHistory} from 'react-router-dom'
 import { GlobalContext, GlobalDispatchContext } from '../ContextStore/ContextAPI'
-import logo from '../Assets/logo-pettamo.png'
+import Doctor from '../Assets/Doctor.jpeg'
 import { ManageLocalStorage } from '../Utils/ManageLocalStorage';
 const Header =()=>{
 const {loginState}= React.useContext(GlobalContext)
@@ -25,11 +25,11 @@ const toLogin=()=>history.push('./dashboard')
     return     <nav className="navbar navbar-expand-lg navbar-light" id="nav" style={{background: '#FDF5E5'}}>
     <div className="imagecontainer" onClick={toLogin}>
     <Link to="/" className="nav-link">
-      <img alt="Vue logo" src={logo} width="50px" className="CartLogo"/>
+      <img alt="Vue logo" src={Doctor} width="50px" className="CartLogo"/>
     </Link>
     </div>
     <Link to="/" className="nav-link">
-      <div className='fantasy' onClick={toLogin} style={{ color: '#521F1E'}}>Pettamo</div>
+      <div className='fantasy' onClick={toLogin} style={{ color: '#521F1E'}}>Dr. Chitti, PhD AI</div>
     </Link>
     <button
       className="navbar-toggler"
@@ -46,21 +46,10 @@ const toLogin=()=>history.push('./dashboard')
     </button>
     <div className={`collapse navbar-collapse ${show?'show':''}`} id="navbarText" >
       <ul className="navbar-nav mr-auto">
-
-          <li className="nav-item">
-           <Link to="/appointments"  className="nav-link">Appointments</Link>
-        </li>
-        <li className="nav-item">
-           <Link to="/pets"  className="nav-link">Pets</Link>
-        </li>
-        <li className="nav-item">
-          {/* <a href="/about" className="nav-link">Reach Us</a> */}
-          <Link to="/profile"  className="nav-link">Profile</Link>
-        </li>
         <li><Link
               to="/login"
               onClick={handleLogClick}
-              className={`nav-link ${loginState.isLoggedIn?'text-danger':''}`}>{loginState.isLoggedIn? <><i class="fas fa-sign-out-alt"></i>Logout</>:'Login'}  </Link></li>
+              className={`nav-link ${loginState.isLoggedIn?'text-danger':''}`}>{loginState.isLoggedIn? <><i className="fas fa-sign-out-alt"></i>Logout</>:'Login'}  </Link></li>
       </ul>
     </div>
   </nav>

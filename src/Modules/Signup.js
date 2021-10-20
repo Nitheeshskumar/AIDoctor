@@ -1,5 +1,5 @@
 import React from 'react'
-import loginimg from '../Assets/astronaut.png'
+import loginimg from '../Assets/Loginlogo.jpg'
 import uuid from "node-uuid";
 import { createUser } from '../Services/UserServices';
 import  {toaster} from '../Components/Toast';
@@ -43,7 +43,7 @@ if(!valPswd(Pswd.current.value)){
 
     return  <div className="create-account">
     <form className="form-signup needs-validation" onSubmit={handleSignup} >
-      <img className="mb-4" src={loginimg} width="72" height="72" alt="Create Account"/>
+      <img className="mb-4 DoctorImage" src={loginimg} width="72" height="72" alt="Create Account"/>
       <h1 className="h3 mb-3 font-weight-normal">Create an account</h1>
 
 <div className="row">

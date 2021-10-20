@@ -1,5 +1,5 @@
 import React from 'react';
-import loginimg from '../Assets/astronaut.png'
+import loginimg from '../Assets/Loginlogo.jpg'
 import { useHistory } from "react-router-dom";
 // import Alert from './Components/Alert'
 import Signup from './Signup';
@@ -47,7 +47,7 @@ authenticate(payload)
       {isSignUp? <Signup setIsSignup={setIsSignup}/>:
 
         <form className="form-signin" onSubmit={handleSubmit}>
-          <img className="mb-4" src={loginimg} alt="login" width="72" height="72"/>
+          <img className="mb-4 DoctorImage" src={loginimg} alt="login"/>
           <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
           <label htmlFor="email" className="sr-only">Email address</label>
           <input
@@ -84,7 +84,6 @@ authenticate(payload)
         </p>
       </div>
     </div>
-    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
   </div>
       {/* {show &&<Alert content={content.current} show={show} variant={variant.current} closeAlert={closeAlert}/> } */}
 
