@@ -9,7 +9,7 @@ import { ManageLocalStorage } from '../Utils/ManageLocalStorage';
 import { GlobalDispatchContext } from '../ContextStore/ContextAPI';
 function Login(props) {
 
-const [isSignUp,setIsSignup]= React.useState(false)
+const [isSignUp,setIsSignup]= React.useState(true)
 const Email = React.useRef('')
 const Pswd = React.useRef('')
 const history = useHistory()
@@ -22,7 +22,7 @@ dispatch({type:'loader',payload:true})
 authenticate(payload)
 .then(res=>{
   dispatch({type:'loader',payload:false})
-  history.replace('/pets')
+  history.replace('/dashboard')
   ManageLocalStorage.set('userDetails',res)
   dispatch({type:'login',payload:res})
 
