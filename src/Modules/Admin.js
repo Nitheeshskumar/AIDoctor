@@ -49,7 +49,7 @@ const Admin = () => {
         </tr>
       </thead>
       <tbody>
-        {users.map((el, i) => {
+        {users.sort((a,b)=>b-a).map((el, i) => {
           return <tr key={el.id} >
             <td> {i + 1} </td>
             <td >{el.name}</td>
